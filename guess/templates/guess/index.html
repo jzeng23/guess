@@ -1,0 +1,16 @@
+{% extends "guess/layout.html" %}
+
+{% block body %}
+<p>Welcome! This is a game involving guessing random numbers. Here is how to play:</p>
+<ul>
+    <li>Each round, the computer will generate a random number between 1 and 30, and you have to predict what that number is. Enter your prediction into the text box and click "Guess."</li>
+    <li>After each guess, the game will calculate the difference between your guess and the randomly generated number. Let's call this difference the Offset. Now subtract the Offset from 30; your score will increase by the number that results from this subtraction. So the closer your guess is to the answer, the more your score increases.</li>
+    <ul>
+        <li>For example, if you guess 25 but the correct answer is 17, the Offset will be 25 - 17 = 8. Your score will increase by 22, since 30 - 8 = 22.</li>
+    </ul>
+    <li>At the beginning of the game, you get a total of 10 lives. You lose one each time your guess is off by 8 or more from the correct answer. You gain a life each time your answer is off by 2 or less from the answer. This means that yes, it is possible to have more than 10 lives at certain points in the game.</li>
+    <li>The game ends when you run out of lives.</li>
+</ul>
+<p>Ready to play? Hit the button below:</p>
+<button>Get Started</button>
+{% endblock %}

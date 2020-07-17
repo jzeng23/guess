@@ -6,13 +6,13 @@ from django.http import HttpResponseRedirect
 def index(request):
     return render(request, "guess/index.html")
 
-MAX_NUM = 30
+MAX_NUM = 30 # the
 UPPER_OFFSET = 7
 LOWER_OFFSET = 3
 INITIAL_LIVES = 10
 
 def play(request):
-    
+
     global MAX_NUM
     global UPPER_OFFSET
     global LOWER_OFFSET
@@ -52,5 +52,5 @@ def play(request):
         })
     else:
         return render(request, "guess/play.html", {
-            "score":request.session["score"], "scoreChange":request.session["scoreChange"], "lives":request.session["lives"], "livesChange":request.session["livesChange"], "answer":answer, "correct":correct
+            "MAX_NUM":MAX_NUM, "score":request.session["score"], "scoreChange":request.session["scoreChange"], "lives":request.session["lives"], "livesChange":request.session["livesChange"], "answer":answer, "correct":correct
         })

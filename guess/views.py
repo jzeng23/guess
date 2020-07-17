@@ -7,13 +7,6 @@ def index(request):
     return render(request, "guess/index.html")
 
 def play(request):
-    answer = -1
-    correct = -1
-    if "score" not in request.session:
-        request.session["score"] = 0
-        request.session["scoreChange"] = 0
-        request.session["lives"] = 10
-        request.session["livesChange"] = 0
     if request.method == "POST":
         answer = request.POST.get('answer')
         correct = randint(1, 30)
@@ -28,17 +21,29 @@ def play(request):
             request.session["livesChange"] = 1
         else:
             request.session["livesChange"] = 0
+    else:
+        # if the request method is not POST, aka. if the player hits the start button on the home page or directly types the url of this page.
+        # reset game variables and start a new game
+        answer = -1
+        correct = -1
+        request.session["score"] = 0
+        request.session["scoreChange"] = 0
+        request.session["lives"] = 10
+        request.session["livesChange"] = 0
+
     if request.session["lives"] < 1:
         score = request.session["score"]
         scoreChange = request.session["scoreChange"]
         finalAnswer = answer
         finalCorrect = correct
+        '''
         request.session["score"] = 0
         request.session["lives"] = 10
         request.session["scoreChange"] = 0
         request.session["livesChange"] = 0
         answer = -1
         correct = -1
+        '''
         return render(request, "guess/end.html", {
             "score":score, "scoreChange":scoreChange, "finalAnswer":finalAnswer, "finalCorrect":finalCorrect
         })

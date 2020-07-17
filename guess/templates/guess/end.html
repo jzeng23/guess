@@ -8,4 +8,5 @@
     <li>You guessed {{ finalAnswer }}. The correct answer was {{ finalCorrect }}.</li>
     <li>Your score increased by {{ scoreChange }}.</li>
 </ul>
+<a href="{% url 'guess:play' %}"><button>Play Again</button></a>
 {% endblock %}

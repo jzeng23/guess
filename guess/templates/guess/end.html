@@ -1,0 +1,11 @@
+{% extends "guess/layout.html" %}
+
+{% block body %}
+<h4>Game Over</h4>
+<p>Your score: {{ score }}</p>
+<p>In the last round,</p>
+<ul>
+    <li>You guessed {{ finalAnswer }}. The correct answer was {{ finalCorrect }}.</li>
+    <li>Your score increased by {{ scoreChange }}.</li>
+</ul>
+{% endblock %}

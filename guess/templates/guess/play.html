@@ -5,19 +5,18 @@
     {% csrf_token %}
     <input type="number" name="answer" min="1" max="30" required>
     <button>Make Your Guess</button>
+</form>
     {% if answer != -1 %}
-        Last round, you guessed {{ answer }}. The correct answer was {{ correct }}.
+    <p>Last round, you guessed {{ answer }}. The correct answer was {{ correct }}.</p>
     {% endif %}
-    <br>
-    score: {{ score }}
-    (increased by {{ scoreChange }} since last round)
-    <br>
-    lives left: {{ lives }}
+
+    <p>score: {{ score }} (increased by {{ scoreChange }} since last round)</p>
+
+    <p>lives left: {{ lives }}
     {% if livesChange == -1 %}
         (you lost a life last round)
     {% endif %}
     {% if livesChange == +1 %}
         (you gained a life last round)
-    {% endif %}
-</form>
+        {% endif %}</p>
 {% endblock %}

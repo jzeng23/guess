@@ -6,10 +6,10 @@ from django.http import HttpResponseRedirect
 def index(request):
     return render(request, "guess/index.html")
 
-MAX_NUM = 30 # the
-UPPER_OFFSET = 7
-LOWER_OFFSET = 3
-INITIAL_LIVES = 10
+MAX_NUM = 30 # the upper limit of the range of integers possible in guesses and correct answers
+UPPER_OFFSET = 7 # the offset limit above which the player loses a life
+LOWER_OFFSET = 3 # the offset limit under which the play gains a life
+INITIAL_LIVES = 10 # number of lives the player starts with
 
 def play(request):
 
@@ -19,6 +19,7 @@ def play(request):
     global INITIAL_LIVES
 
     if request.method == "POST":
+        # code below executes in each round after the first
         answer = request.POST.get('answer')
         correct = randint(1, MAX_NUM)
         offset = abs(int(answer)-correct)
@@ -43,6 +44,7 @@ def play(request):
         request.session["livesChange"] = 0
 
     if request.session["lives"] < 1:
+        # when the player runs out of lives and the game ends
         score = request.session["score"]
         scoreChange = request.session["scoreChange"]
         finalAnswer = answer

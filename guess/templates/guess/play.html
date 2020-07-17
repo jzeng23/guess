@@ -3,8 +3,8 @@
 {% block body %}
 <form action="{% url 'guess:play' %}" method="post">
     {% csrf_token %}
-    Enter a number from 1 to 30:
-    <input type="number" name="answer" min="1" max="30" required>
+    Enter a number from 1 to {{ MAX_NUM }}:
+    <input type="number" name="answer" min="1" max={{ MAX_NUM }} required>
     <button>Guess!</button>
 </form>
     {% if answer != -1 %}

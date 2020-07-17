@@ -6,17 +6,28 @@ from django.http import HttpResponseRedirect
 def index(request):
     return render(request, "guess/index.html")
 
+MAX_NUM = 30
+UPPER_OFFSET = 7
+LOWER_OFFSET = 3
+INITIAL_LIVES = 10
+
 def play(request):
+    
+    global MAX_NUM
+    global UPPER_OFFSET
+    global LOWER_OFFSET
+    global INITIAL_LIVES
+
     if request.method == "POST":
         answer = request.POST.get('answer')
-        correct = randint(1, 30)
+        correct = randint(1, MAX_NUM)
         offset = abs(int(answer)-correct)
-        request.session["score"] += 30-offset
-        request.session["scoreChange"] = 30-offset
-        if offset > 7:
+        request.session["score"] += MAX_NUM-offset
+        request.session["scoreChange"] = MAX_NUM-offset
+        if offset > UPPER_OFFSET:
             request.session["lives"] = request.session["lives"] - 1
             request.session["livesChange"] = -1
-        elif offset < 3:
+        elif offset < LOWER_OFFSET:
             request.session["lives"] = request.session["lives"] + 1
             request.session["livesChange"] = 1
         else:
@@ -28,7 +39,7 @@ def play(request):
         correct = -1
         request.session["score"] = 0
         request.session["scoreChange"] = 0
-        request.session["lives"] = 10
+        request.session["lives"] = INITIAL_LIVES
         request.session["livesChange"] = 0
 
     if request.session["lives"] < 1:
@@ -36,14 +47,6 @@ def play(request):
         scoreChange = request.session["scoreChange"]
         finalAnswer = answer
         finalCorrect = correct
-        '''
-        request.session["score"] = 0
-        request.session["lives"] = 10
-        request.session["scoreChange"] = 0
-        request.session["livesChange"] = 0
-        answer = -1
-        correct = -1
-        '''
         return render(request, "guess/end.html", {
             "score":score, "scoreChange":scoreChange, "finalAnswer":finalAnswer, "finalCorrect":finalCorrect
         })

@@ -14,13 +14,14 @@ h6{
 }
 
 p,li{
-    color: #a6a6a6;
+    color: #bfbfbf;
 }
 
 button{
     background-color: #99ffcc;
     color: #333333;
     border: none;
+    margin: 10px;
 }
 
 .stats{

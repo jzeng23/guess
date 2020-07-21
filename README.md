@@ -3,6 +3,8 @@ This project is a game called Guess that I made just for fun. In the game, you g
 
 ## How to play
 
+Go to guessgame.pythonanywhere.com to play.
+
 Here are the rules for the game. The rules are also provided on the website's home page.
 * Each round, the computer will generate a random number between 1 and 30, and you have to predict what that number is. Enter your prediction into the text box and click "Guess".
 * After each guess, the closer your guess is to the answer, the more your score increases. To determine how much your score increases, the game will calculate the difference between your guess and the randomly generated number. Let's call this difference the Offset. Now subtract the Offset from 30. Your score will increase by the number that results from this subtraction.

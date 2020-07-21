@@ -3,7 +3,7 @@ This project is a game called Guess that I made just for fun. In the game, you g
 
 ## How to play
 
-Go to guessgame.pythonanywhere.com to play.
+Go to http://guessgame.pythonanywhere.com to play.
 
 Here are the rules for the game. The rules are also provided on the website's home page.
 * Each round, the computer will generate a random number between 1 and 30, and you have to predict what that number is. Enter your prediction into the text box and click "Guess".

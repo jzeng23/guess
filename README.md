@@ -12,5 +12,7 @@ Here are the rules for the game. The rules are also provided on the website's ho
 * At the beginning of the game, you get a total of 10 lives. You lose one each time your guess is off by 8 or more from the correct answer. You gain a life each time your answer is off by 2 or less from the answer. This means that yes, it is possible to have more than 10 lives at certain points in the game.
 * The game ends when you run out of lives.
 
-## Tech used
-* Built with Django
+## Tools used
+* Built with Django 3.0 and Python 3.8
+* Designed with Bootstrap 4
+* Deployed with PythonAnywhere

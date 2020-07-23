@@ -13,12 +13,15 @@ Here are the rules for the game. The rules are also provided on the website's ho
 
 ## Demo
 This is the app's home page:
+
 ![home page](https://github.com/jzeng23/guess/blob/master/pictures/guess-home-page.jpg)
 
 This is the screen during the game:
+
 ![screen while playing](https://github.com/jzeng23/guess/blob/master/pictures/guess-play-screen.jpg)
 
 The screen at the end of the game:
+
 ![game over screen](https://github.com/jzeng23/guess/blob/master/pictures/guess-game-over.jpg)
 
 ## Built with

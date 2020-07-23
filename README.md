@@ -12,7 +12,7 @@ Here are the rules for the game. The rules are also provided on the website's ho
 * The game ends when you run out of lives.
 
 ## Demo
-This is the app's home page:
+This is the home page:
 
 ![home page](https://github.com/jzeng23/guess/blob/master/pictures/guess-home-page.jpg)
 
